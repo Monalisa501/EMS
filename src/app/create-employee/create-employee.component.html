@@ -1,0 +1,70 @@
+<!-- main app container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Registration</h2>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Employee Number*</label>
+                        <input type="text" formControlName="empno" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.empno.errors }" />
+                        <div *ngIf="submitted && f.empno.errors" class="invalid-feedback">
+                            <div *ngIf="f.empno.errors.required">Employee Number  is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Name*</label>
+                        <input type="text" formControlName="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" />
+                        <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
+                            <div *ngIf="f.Name.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email*</label>
+                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Date OF Birth*</label>
+                        <input type="date" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+                        <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                            <div *ngIf="f.dob.errors.required">DOB is required</div>
+                            <div *ngIf="f.dob.errors.dob">Please enter valid DOB</div>
+                        </div>
+                    </div>
+                     
+                    <div class="form-group">
+                        <label>Gender*</label>
+                        
+                        <input type="radio" value="male" class="form-control radioCls" formControlName="gender"  [ngClass]="{ 'is-invalid': submitted && f.gender.errors }"> Male
+                        <input type="radio" value="female" class="form-control radioCls" formControlName="gender" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }"> Female
+                        
+                        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback"> 
+                            <div *ngIf="f.gender.errors.required">Gender is required</div>
+                             
+                        </div> 
+                    </div> 
+                    <div class="form-group"> 
+                        
+                        <label>Department*</label>
+                        <select type="text" formControlName="department" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.department.errors }" >
+                            <option [value]="dept.value" *ngFor="let dept of departments">            
+                                {{dept.name}}</option>
+                        </select>
+                        <div *ngIf="submitted && f.department.errors" class="invalid-feedback">
+                        <div *ngIf="f.department.errors.required">Department is required</div></div>
+                    </div>
+                    
+                    
+                
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary" >Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

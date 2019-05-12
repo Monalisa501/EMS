@@ -1,0 +1,73 @@
+<div class="table-responsive">
+    <p style="text-align:center; margin-top: 15px;"class="font-weight-bold">
+        EMPLOYEE LIST
+        <button class="btn_add" routerLink="/create-employee">Add New</button>
+        </p> 
+  <table class="table"> 
+         
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Emp No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">DOB</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Dept</th>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>1001</td>
+        <td>William</td>
+        <td>william12@gmail.com</td>
+        <td>21-11-1883</td>
+        <td>Male</td>
+        <td>finance</td>
+        <td><button class="btn-edit" (click)="onClickMe()" > Edit</button></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>1002</td>
+        <td>Anthony</td>
+        <td>anthony001@gmail.com</td>
+        <td>13-6-1990</td>
+        <td>Male</td>
+        <td>Human Resource</td>
+        <td><button class="btn-edit">Edit</button></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>1003</td>
+        <td>Jack</td>
+        <td>jack89@yahoo.com</td>
+        <td>22-09-1889</td>
+        <td>Male</td>
+        <td>Production</td>
+        <td><button class="btn-edit">Edit</button></td>
+      </tr>
+      <tr>
+          <th scope="row">4</th>
+          <td>1004</td>
+          <td>Jimmy</td>
+          <td>jimmy34@gmail.com</td>
+          <td>19-07-1883</td>
+          <td>Female</td>
+          <td>Marketing</td>
+          <td><button class="btn-edit">Edit</button></td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>1005</td>
+            <td>lan</td>
+            <td>lan21@yahoo.com</td>
+            <td>22-12-1890</td>
+            <td>Male</td>
+            <td>Accounting</td>
+            <td><button class="btn-edit">Edit</button></td>
+          </tr>
+    </tbody>
+  </table>
+</div>
